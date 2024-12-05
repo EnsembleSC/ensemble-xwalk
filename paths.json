@@ -2,18 +2,10 @@
   "mappings": [
     "/content/ensemble-xwalk/:/",
     "/content/ensemble-xwalk/configuration:/.helix/config.json",
-    "/content/ensemble-xwalk/metadata:/metadata.json",
-    "/content/ensemble-xwalk/customers/:/customers.json",
-    "/content/ensemble-xwalk/portfolio/:/portfolio.json",
-    "/content/ensemble-xwalk/teams/:/teams.json",
-    "/content/dam/ensemble-xwalk/customers/:/customers/",
-    "/content/dam/ensemble-xwalk/portfolio/:/portfolio/",
-    "/content/dam/ensemble-xwalk/teams/:/teams/"
+    "/content/ensemble-xwalk/metadata:/metadata.json"
   ],
   "includes": [
-    "/content/ensemble-xwalk/",
-    "/content/dam/ensemble-xwalk/customers/",
-    "/content/dam/ensemble-xwalk/portfolio/",
-    "/content/dam/ensemble-xwalk/teams/"
+    "/content/ensemble-xwalk",
+    "/content/dam/ensemble-xwalk/"
   ]
 }
