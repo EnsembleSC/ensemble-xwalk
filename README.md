@@ -1,4 +1,4 @@
-# Your Project's Title...
+# Ensemble X-Walk Demo
 Mockup of Ensemble.com landing page to showcase how efficient is to develop sites in Edge Delivery Services with X-Walk & AEM Universal Editor.
 Original URL: https://www.ensemble.com/
 
