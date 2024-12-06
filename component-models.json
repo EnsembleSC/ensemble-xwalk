@@ -107,14 +107,36 @@
             "name": "Highlight",
             "value": "highlight"
           },
-		  {
+          {
             "name": "Contact",
             "value": "contact"
-		  },
-		  {
+          },
+          {
             "name": "Services Section",
             "value": "services-section"
-		  }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "cards",
+    "fields": [
+      {
+        "component": "select",
+        "name": "classes",
+        "value": "",
+        "label": "Block Variant",
+        "valueType": "string",
+        "options": [
+          {
+            "name": "Default",
+            "value": ""
+          },
+          {
+            "name": "Services",
+            "value": "services"
+          }
         ]
       }
     ]
@@ -140,43 +162,43 @@
   },
   {
     "id": "carousel",
-	"fields": [
-		{
-			"component": "select",
-			"valueType": "string",
-			"name": "link",
-			"label": "Service",
-			"value": "",
-			"options": [
-			  {
-				"name": "Customers",
-				"value": "https://main--ensemble-xwalk--adobedevxsc.aem.page/carousel/customers.json"
-			  }
-			]
-		}
-	]
+    "fields": [
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "link",
+        "label": "Service",
+        "value": "",
+        "options": [
+          {
+            "name": "Customers",
+            "value": "https://main--ensemble-xwalk--adobedevxsc.aem.page/carousel/customers.json"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": "cards-json",
-	"fields": [
-		{
-			"component": "select",
-			"valueType": "string",
-			"name": "link",
-			"label": "Service",
-			"value": "",
-			"options": [
-			  {
-				"name": "Portfolio",
-				"value": "https://main--ensemble-xwalk--adobedevxsc.aem.page/cards/portfolio.json"
-			  },
-			  {
-				"name": "Teams",
-				"value": "https://main--ensemble-xwalk--adobedevxsc.aem.page/cards/teams.json"
-			  }
-			]
-		}
-	]
+    "fields": [
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "link",
+        "label": "Service",
+        "value": "",
+        "options": [
+          {
+            "name": "Portfolio",
+            "value": "https://main--ensemble-xwalk--adobedevxsc.aem.page/cards/portfolio.json"
+          },
+          {
+            "name": "Teams",
+            "value": "https://main--ensemble-xwalk--adobedevxsc.aem.page/cards/teams.json"
+          }
+        ]
+      }
+    ]
   },
   {
     "id": "columns",
@@ -234,37 +256,37 @@
     ]
   },
   {
-	"id": "linked-icon",
-	"fields": [
-		{
-		"component": "select",
-		"name": "icon",
-		"label": "Icon",
+    "id": "linked-icon",
+    "fields": [
+      {
+        "component": "select",
+        "name": "icon",
+        "label": "Icon",
         "valueType": "string",
-		"options": [
-			{
-			"name": "Logo",
-			"value": ":logo:"
-			},
-			{
-			"name": "Linked In",
-			"value": ":linked-in:"
-			}
-		  ]
-		},
-		{
-			"component": "reference",
-			"valueType": "string",
-			"name": "image",
-			"label": "Image",
-			"multi": false
-		},
-		{
-			"component": "aem-content",
-			"name": "Link",
-			"label": "link",
-			"value": ""
-		}
-	]
+        "options": [
+          {
+            "name": "Logo",
+            "value": ":logo:"
+          },
+          {
+            "name": "Linked In",
+            "value": ":linked-in:"
+          }
+        ]
+      },
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "image",
+        "label": "Image",
+        "multi": false
+      },
+      {
+        "component": "aem-content",
+        "name": "Link",
+        "label": "link",
+        "value": ""
+      }
+    ]
   }
 ]
