@@ -1,3 +1,4 @@
+/* eslint-disable no-tabs */
 import { fetchPlaceholders, createOptimizedPicture } from '../../scripts/aem.js';
 
 function updateActiveSlide(slide) {
@@ -68,7 +69,6 @@ function bindEvents(block) {
   block.querySelectorAll('.carousel-slide').forEach((slide) => {
     slideObserver.observe(slide);
   });
-  
 }
 
 function createSlide(row, slideIndex, carouselId) {
@@ -93,11 +93,11 @@ function createSlide(row, slideIndex, carouselId) {
 async function fetchJson(link) {
   const response = await fetch(link?.href);
   if (response.ok) {
-	const jsonData = await response.json();
-	const data = jsonData?.data;
-	return data;
+    const jsonData = await response.json();
+    const data = jsonData?.data;
+    return data;
   }
-	return 'an error occurred';
+  return 'an error occurred';
 }
 
 let carouselId = 0;
@@ -140,71 +140,72 @@ export default async function decorate(block) {
   }
   const link = block.querySelector('a');
   const serviceWrapper = link.closest('.carousel > div');
-  console.log(serviceWrapper)
+  console.log(serviceWrapper);
   serviceWrapper.style.display = 'none';
 
-  if(isJSONCarousel){  
-  	const slideData = await fetchJson(link);
+  if (isJSONCarousel) {
+    const slideData = await fetchJson(link);
 
-	slideData.forEach((slide, idx) => {
-		const picture = createOptimizedPicture(slide.image, slide.title, false, [{ width: 320 }]);
-		picture.lastElementChild.width = '320';
-		picture.lastElementChild.height = '180';
+    slideData.forEach((slide, idx) => {
+      const picture = createOptimizedPicture(slide.image, slide.title, false, [{ width: 320 }]);
+      picture.lastElementChild.width = '320';
+      picture.lastElementChild.height = '180';
 
-		const createdSlide = document.createElement('li');
-		createdSlide.dataset.slideIndex = idx;
-		createdSlide.setAttribute('id', `carousel-${carouselId}-slide-${idx}`);
-		createdSlide.classList.add('carousel-slide');
-		if(isJSONCarousel){
-		createdSlide.innerHTML = `
-		 <a href="${slide.url}" aria-label="${slide['anchor-text']}" title="${slide['anchor-text']}" class="button">
+      const createdSlide = document.createElement('li');
+      createdSlide.dataset.slideIndex = idx;
+      createdSlide.setAttribute('id', `carousel-${carouselId}-slide-${idx}`);
+      createdSlide.classList.add('carousel-slide');
+      if (isJSONCarousel) {
+        createdSlide.innerHTML = `
+		<a href="${slide.url}" aria-label="${slide['anchor-text']}" title="${slide['anchor-text']}" class="button">
 			<div class="slide-image">
 			${picture.outerHTML}
 			</div>
         </a>
         <div class="slide-content-body">
-		  <a href="${slide.url}" aria-label="${slide['anchor-text']}" title="${slide['anchor-text']}" class="button">
+			<a href="${slide.url}" aria-label="${slide['anchor-text']}" title="${slide['anchor-text']}" class="button">
           	<h5>${slide.title}</h5>
 		  </a>
 		  <p>${slide.price}</p>
 		  <p>${slide.sale}</p>
         </div>
-      `;}
+      `;
+      }
 
-		const labeledBy = createdSlide.querySelector('h1, h2, h3, h4, h5, h6');
-		if (labeledBy) {
-			createdSlide.setAttribute('aria-labelledby', labeledBy.getAttribute('id'));
-		}
+      const labeledBy = createdSlide.querySelector('h1, h2, h3, h4, h5, h6');
+      if (labeledBy) {
+        createdSlide.setAttribute('aria-labelledby', labeledBy.getAttribute('id'));
+      }
 
-		slidesWrapper.append(createdSlide);
+      slidesWrapper.append(createdSlide);
 
-		if (slideIndicators) {
-			const indicator = document.createElement('li');
-			indicator.classList.add('carousel-slide-indicator');
-			indicator.dataset.targetSlide = idx;
-			indicator.innerHTML = `<button type="button"><span>${placeholders.showSlide || 'Show Slide'} ${idx + 1} ${placeholders.of || 'of'} ${slideData.length}</span></button>`;
-			slideIndicators.append(indicator);
-		}
-	})
+      if (slideIndicators) {
+        const indicator = document.createElement('li');
+        indicator.classList.add('carousel-slide-indicator');
+        indicator.dataset.targetSlide = idx;
+        indicator.innerHTML = `<button type="button"><span>${placeholders.showSlide || 'Show Slide'} ${idx + 1} ${placeholders.of || 'of'} ${slideData.length}</span></button>`;
+        slideIndicators.append(indicator);
+      }
+    });
   } else {
-	rows.forEach((row, idx) => {
-		const slide = createSlide(row, idx, carouselId);
-		slidesWrapper.append(slide);
+    rows.forEach((row, idx) => {
+      const slide = createSlide(row, idx, carouselId);
+      slidesWrapper.append(slide);
 
-		if (slideIndicators) {
-		const indicator = document.createElement('li');
-		indicator.classList.add('carousel-slide-indicator');
-		indicator.dataset.targetSlide = idx;
-		indicator.innerHTML = `<button type="button"><span>${placeholders.showSlide || 'Show Slide'} ${idx + 1} ${placeholders.of || 'of'} ${rows.length}</span></button>`;
-		slideIndicators.append(indicator);
-		}
-		row.remove();
-	});
+      if (slideIndicators) {
+        const indicator = document.createElement('li');
+        indicator.classList.add('carousel-slide-indicator');
+        indicator.dataset.targetSlide = idx;
+        indicator.innerHTML = `<button type="button"><span>${placeholders.showSlide || 'Show Slide'} ${idx + 1} ${placeholders.of || 'of'} ${rows.length}</span></button>`;
+        slideIndicators.append(indicator);
+      }
+      row.remove();
+    });
   }
   container.append(slidesWrapper);
   block.prepend(container);
 
-  if(!isSingleSlide) {
+  if (!isSingleSlide) {
     bindEvents(block);
   }
 }
