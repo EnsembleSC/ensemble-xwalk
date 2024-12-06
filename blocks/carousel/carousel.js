@@ -1,210 +1,123 @@
-/* eslint-disable no-tabs */
-import { fetchPlaceholders, createOptimizedPicture } from '../../scripts/aem.js';
+/* eslint-disable no-use-before-define */
+/* eslint-disable no-shadow */
+/* eslint-disable no-plusplus */
+import { createOptimizedPicture } from '../../scripts/aem.js';
 
-function updateActiveSlide(slide) {
-  const block = slide.closest('.carousel');
-  const slideIndex = parseInt(slide.dataset.slideIndex, 10);
-  block.dataset.activeSlide = slideIndex;
-
-  const slides = block.querySelectorAll('.carousel-slide');
-
-  slides.forEach((aSlide, idx) => {
-    aSlide.setAttribute('aria-hidden', idx !== slideIndex);
-    aSlide.querySelectorAll('a').forEach((link) => {
-      if (idx !== slideIndex) {
-        link.setAttribute('tabindex', '-1');
-      } else {
-        link.removeAttribute('tabindex');
-      }
-    });
-  });
-
-  const indicators = block.querySelectorAll('.carousel-slide-indicator');
-  indicators.forEach((indicator, idx) => {
-    if (idx !== slideIndex) {
-      indicator.querySelector('button').removeAttribute('disabled');
-    } else {
-      indicator.querySelector('button').setAttribute('disabled', 'true');
-    }
-  });
-}
-
-function showSlide(block, slideIndex = 0) {
-  const slides = block.querySelectorAll('.carousel-slide');
-  let realSlideIndex = slideIndex < 0 ? slides.length - 1 : slideIndex;
-  if (slideIndex >= slides.length) realSlideIndex = 0;
-  const activeSlide = slides[realSlideIndex];
-
-  activeSlide.querySelectorAll('a').forEach((link) => link.removeAttribute('tabindex'));
-  block.querySelector('.carousel-slides').scrollTo({
-    top: 0,
-    left: activeSlide.offsetLeft,
-    behavior: 'smooth',
-  });
-}
-
-function bindEvents(block) {
-  const slideIndicators = block.querySelector('.carousel-slide-indicators');
-  if (!slideIndicators) return;
-
-  slideIndicators.querySelectorAll('button').forEach((button) => {
-    button.addEventListener('click', (e) => {
-      const slideIndicator = e.currentTarget.parentElement;
-      showSlide(block, parseInt(slideIndicator.dataset.targetSlide, 10));
-    });
-  });
-
-  block.querySelector('.slide-prev').addEventListener('click', () => {
-    showSlide(block, parseInt(block.dataset.activeSlide, 10) - 1);
-  });
-  block.querySelector('.slide-next').addEventListener('click', () => {
-    showSlide(block, parseInt(block.dataset.activeSlide, 10) + 1);
-  });
-
-  const slideObserver = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) updateActiveSlide(entry.target);
-    });
-  }, { threshold: 0.5 });
-  block.querySelectorAll('.carousel-slide').forEach((slide) => {
-    slideObserver.observe(slide);
-  });
-}
-
-function createSlide(row, slideIndex, carouselId) {
-  const slide = document.createElement('li');
-  slide.dataset.slideIndex = slideIndex;
-  slide.setAttribute('id', `carousel-${carouselId}-slide-${slideIndex}`);
-  slide.classList.add('carousel-slide');
-
-  row.querySelectorAll(':scope > div').forEach((column, colIdx) => {
-    column.classList.add(`carousel-slide-${colIdx === 0 ? 'image' : 'content'}`);
-    slide.append(column);
-  });
-
-  const labeledBy = slide.querySelector('h1, h2, h3, h4, h5, h6');
-  if (labeledBy) {
-    slide.setAttribute('aria-labelledby', labeledBy.getAttribute('id'));
-  }
-
-  return slide;
-}
-
-async function fetchJson(link) {
-  const response = await fetch(link?.href);
-  if (response.ok) {
-    const jsonData = await response.json();
-    const data = jsonData?.data;
-    return data;
-  }
-  return 'an error occurred';
-}
-
-let carouselId = 0;
-export default async function decorate(block) {
-  carouselId += 1;
-  const isJSONCarousel = block.classList.contains('is-json');
-
-  block.setAttribute('id', `carousel-${carouselId}`);
-  const rows = block.querySelectorAll(':scope > div');
-  const isSingleSlide = isJSONCarousel.length < 2 && rows.length < 2;
-  const placeholders = await fetchPlaceholders();
-
-  block.setAttribute('role', 'region');
-  block.setAttribute('aria-roledescription', placeholders.carousel || 'Carousel');
-
-  const container = document.createElement('div');
-  container.classList.add('carousel-slides-container');
-
-  const slidesWrapper = document.createElement('ul');
-  slidesWrapper.classList.add('carousel-slides');
-  block.prepend(slidesWrapper);
-
-  let slideIndicators;
-  if (!isSingleSlide) {
-    const slideIndicatorsNav = document.createElement('nav');
-    slideIndicatorsNav.setAttribute('aria-label', placeholders.carouselSlideControls || 'Carousel Slide Controls');
-    slideIndicators = document.createElement('ol');
-    slideIndicators.classList.add('carousel-slide-indicators');
-    slideIndicatorsNav.append(slideIndicators);
-    block.append(slideIndicatorsNav);
-
-    const slideNavButtons = document.createElement('div');
-    slideNavButtons.classList.add('carousel-navigation-buttons');
-    slideNavButtons.innerHTML = `
-      <button type="button" class= "slide-prev" aria-label="${placeholders.previousSlide || 'Previous Slide'}"></button>
-      <button type="button" class="slide-next" aria-label="${placeholders.nextSlide || 'Next Slide'}"></button>
-    `;
-
-    container.append(slideNavButtons);
-  }
+export default function decorate(block) {
   const link = block.querySelector('a');
-  const serviceWrapper = link.closest('.carousel > div');
-  serviceWrapper.style.display = 'none';
+  let data = [];
+  let totalSlides;
 
-  if (isJSONCarousel) {
-    const slideData = await fetchJson(link);
+  block.textContent = '';
 
-    slideData.forEach((slide, idx) => {
-      const picture = createOptimizedPicture(slide.image, slide.title, false, [{ width: 320 }]);
-      picture.lastElementChild.width = '320';
-      picture.lastElementChild.height = '180';
+  function sortData(data) {
+    const result = [];
+    const groupSize = 9;
 
-      const createdSlide = document.createElement('li');
-      createdSlide.dataset.slideIndex = idx;
-      createdSlide.setAttribute('id', `carousel-${carouselId}-slide-${idx}`);
-      createdSlide.classList.add('carousel-slide');
-      if (isJSONCarousel) {
-        createdSlide.innerHTML = `
-		<a href="${slide.url}" aria-label="${slide['anchor-text']}" title="${slide['anchor-text']}" class="button">
-			<div class="slide-image">
-			${picture.outerHTML}
-			</div>
-        </a>
-        <div class="slide-content-body">
-			<a href="${slide.url}" aria-label="${slide['anchor-text']}" title="${slide['anchor-text']}" class="button">
-          	<h5>${slide.title}</h5>
-		  </a>
-		  <p>${slide.price}</p>
-		  <p>${slide.sale}</p>
-        </div>
-      `;
-      }
+    for (let i = 0; i < data.length; i += groupSize) {
+      result.push(data.slice(i, i + groupSize));
+    }
+    return result;
+  }
 
-      const labeledBy = createdSlide.querySelector('h1, h2, h3, h4, h5, h6');
-      if (labeledBy) {
-        createdSlide.setAttribute('aria-labelledby', labeledBy.getAttribute('id'));
-      }
+  function createSlides(sortedGroups) {
+    const updatedSlides = [];
 
-      slidesWrapper.append(createdSlide);
+    sortedGroups.forEach((group) => {
+      const slideDiv = document.createElement('div');
+      slideDiv.classList.add('slide');
 
-      if (slideIndicators) {
-        const indicator = document.createElement('li');
-        indicator.classList.add('carousel-slide-indicator');
-        indicator.dataset.targetSlide = idx;
-        indicator.innerHTML = `<button type="button"><span>${placeholders.showSlide || 'Show Slide'} ${idx + 1} ${placeholders.of || 'of'} ${slideData.length}</span></button>`;
-        slideIndicators.append(indicator);
+      group.forEach((customer) => {
+        const optimizedImage = createOptimizedPicture(customer.image, customer.name, true, [{ width: '210' }]);
+
+        const cardHtml = `<div class="card">${optimizedImage.outerHTML}</div>`;
+        slideDiv.innerHTML += cardHtml;
+      });
+
+      updatedSlides.push(slideDiv.outerHTML);
+    });
+
+    block.innerHTML = `<div class="carousel-wrapper">
+      <div class="cards-carousel">
+        ${updatedSlides.join('')}
+      </div>
+      <div class="carousel-nav-controls">
+        <button class="arrow left-arrow">
+          <img src="/icons/left-arrow.png" title="Left Arrow Icon"/>
+        </button>
+        <button class="arrow right-arrow">
+          <img src="/icons/right-arrow.png" title="Right Arrow Icon"/>
+        </button>
+      </div>
+    </div>`;
+
+    const carousel = block.querySelector('.cards-carousel');
+    carousel.style.width = `${sortedGroups.length * 100}%`;
+
+    // Calculate totalSlides here, after the slides are created
+    totalSlides = block.querySelectorAll('.slide').length;
+
+    addEventListeners(totalSlides);
+  }
+
+  let currentSlide = 0;
+  function showSlide(index) {
+    // Calculate the new left offset of the carousel
+    const newLeftOffset = index * (-100); // 100% is the width of each slide
+    block.querySelector('.cards-carousel').style.left = `${newLeftOffset}%`;
+
+    // Add or remove 'disabled' class based on the current slide
+    const leftArrow = block.querySelector('.left-arrow');
+    const rightArrow = block.querySelector('.right-arrow');
+
+    if (index === 0) {
+      leftArrow.classList.add('disabled');
+    } else {
+      leftArrow.classList.remove('disabled');
+    }
+
+    if (index === totalSlides - 1) {
+      rightArrow.classList.add('disabled');
+    } else {
+      rightArrow.classList.remove('disabled');
+    }
+  }
+
+  function addEventListeners(totalSlides) {
+    const leftArrow = block.querySelector('.left-arrow');
+    const rightArrow = block.querySelector('.right-arrow');
+
+    leftArrow.addEventListener('click', () => {
+      if (currentSlide > 0) {
+        currentSlide--;
+        showSlide(currentSlide);
       }
     });
-  } else {
-    rows.forEach((row, idx) => {
-      const slide = createSlide(row, idx, carouselId);
-      slidesWrapper.append(slide);
 
-      if (slideIndicators) {
-        const indicator = document.createElement('li');
-        indicator.classList.add('carousel-slide-indicator');
-        indicator.dataset.targetSlide = idx;
-        indicator.innerHTML = `<button type="button"><span>${placeholders.showSlide || 'Show Slide'} ${idx + 1} ${placeholders.of || 'of'} ${rows.length}</span></button>`;
-        slideIndicators.append(indicator);
+    rightArrow.addEventListener('click', () => {
+      if (currentSlide < totalSlides - 1) {
+        currentSlide++;
+        showSlide(currentSlide);
       }
-      row.remove();
     });
-  }
-  container.append(slidesWrapper);
-  block.prepend(container);
 
-  if (!isSingleSlide) {
-    bindEvents(block);
+    // Initially add the 'disabled' class to the left arrow
+    leftArrow.classList.add('disabled');
   }
+
+  async function initialize() {
+    const response = await fetch(link?.href);
+
+    if (response.ok) {
+      const jsonData = await response.json();
+      data = jsonData?.data;
+
+      const sortedGroups = sortData(data);
+      createSlides(sortedGroups);
+    } else {
+      console.log('Unable to get json data for cards customers block');
+    }
+  }
+
+  initialize();
 }
