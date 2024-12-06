@@ -131,6 +131,46 @@
     ]
   },
   {
+    "id": "carousel",
+	"fields": [
+		{
+			"component": "select",
+			"valueType": "string",
+			"name": "link",
+			"label": "Service",
+			"value": "",
+			"options": [
+			  {
+				"name": "Customers",
+				"value": "https://main--ensemble-xwalk--adobedevxsc.aem.page/customers.json"
+			  }
+			]
+		}
+	]
+  },
+  {
+    "id": "cards-json",
+	"fields": [
+		{
+			"component": "select",
+			"valueType": "string",
+			"name": "link",
+			"label": "Service",
+			"value": "",
+			"options": [
+			  {
+				"name": "Portfolio",
+				"value": "https://main--ensemble-xwalk--adobedevxsc.aem.page/portfolio.json"
+			  },
+			  {
+				"name": "Teams",
+				"value": "https://main--ensemble-xwalk--adobedevxsc.aem.page/teams.json"
+			  }
+			]
+		}
+	]
+  },
+  {
     "id": "columns",
     "fields": [
       {

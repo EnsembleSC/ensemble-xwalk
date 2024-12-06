@@ -3,6 +3,9 @@
 	  "/content/ensemble-xwalk/:/",
 	  "/content/ensemble-xwalk/configuration:/.helix/config.json",
 	  "/content/ensemble-xwalk/metadata:/metadata.json",
+	  "/content/ensemble-xwalk/metadata:/customers.json",
+	  "/content/ensemble-xwalk/metadata:/portfolio.json",
+	  "/content/ensemble-xwalk/metadata:/teams.json",
 	  "/content/dam/ensemble-xwalk/customers/:/customers/",
 	  "/content/dam/ensemble-xwalk/portfolio/:/portfolio/",
 	  "/content/dam/ensemble-xwalk/teams/:/teams/"
