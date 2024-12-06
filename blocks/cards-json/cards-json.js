@@ -4,7 +4,7 @@ import CardsTeams from './cards-teams.js';
 export default function decorate(block) {
   const link = block.querySelector('a');
   const isPortfolio = link.href.includes('portfolio');
-  const isTeams = link.href.contains('teams');
+  const isTeams = link.href.includes('teams');
 
   if (isPortfolio) {
     CardsPortfolio(block, link);
