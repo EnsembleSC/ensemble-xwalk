@@ -106,7 +106,15 @@
           {
             "name": "Highlight",
             "value": "highlight"
-          }
+          },
+		  {
+            "name": "Contact",
+            "value": "contact"
+		  },
+		  {
+            "name": "Services Section",
+            "value": "services-section"
+		  }
         ]
       }
     ]

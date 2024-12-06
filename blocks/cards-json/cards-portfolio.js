@@ -126,6 +126,8 @@ export default function CardsPortfolio(block, link) {
 
   async function initialize() {
     const response = await fetch(link?.href);
+    // eslint-disable-next-line no-console
+    console.log('teams', response);
 
     if (response.ok) {
       const jsonData = await response.json();
