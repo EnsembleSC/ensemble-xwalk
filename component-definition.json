@@ -113,34 +113,34 @@
           }
         },
 		{
-			"title": "Cards JSON",
-			"id": "cards-json",
-			"plugins": {
-			  "xwalk": {
-				"page": {
-				  "resourceType": "core/franklin/components/block/v1/block",
-				  "template": {
-					"name": "Cards JSON",
-					"model": "cards-json"
-				  }
-				}
-			  }
-			}
+          "title": "Cards JSON",
+          "id": "cards-json",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block",
+                "template": {
+                  "name": "Cards JSON",
+                  "model": "cards-json"
+                }
+              }
+            }
+          }
         },
         {
-			"title": "Carousel",
-			"id": "carousel",
-			"plugins": {
-			  "xwalk": {
-				"page": {
-				  "resourceType": "core/franklin/components/block/v1/block",
-				  "template": {
-					"name": "Carousel",
-					"model": "carousel"
-				  }
-				}
-			  }
-			}
+          "title": "Carousel",
+          "id": "carousel",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block",
+                "template": {
+                  "name": "Carousel",
+                  "model": "carousel"
+                }
+              }
+            }
+          }
         },
         {
           "title": "Columns",
@@ -182,21 +182,6 @@
                 "template": {
                   "name": "Hero",
                   "model": "hero"
-                }
-              }
-            }
-          }
-        },
-        {
-          "title": "Linked Icon",
-          "id": "linked-icon",
-          "plugins": {
-            "xwalk": {
-              "page": {
-                "resourceType": "core/franklin/components/block/v1/block",
-                "template": {
-                  "name": "Linked-Icon",
-                  "model": "linked-icon"
                 }
               }
             }

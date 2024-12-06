@@ -14,11 +14,10 @@
       "title",
       "hero",
       "cards",
-	  "cards-json",
-	  "carousel",
+      "cards-json",
+      "carousel",
       "columns",
-      "fragment",
-	  "linked-icon"
+      "fragment"
     ]
   },
   {
