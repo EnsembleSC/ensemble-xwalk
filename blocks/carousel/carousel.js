@@ -115,6 +115,7 @@ export default function decorate(block) {
       const sortedGroups = sortData(data);
       createSlides(sortedGroups);
     } else {
+      // eslint-disable-next-line no-console
       console.log('Unable to get json data for cards customers block');
     }
   }
