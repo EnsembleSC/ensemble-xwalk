@@ -41,6 +41,7 @@
 
   /* nav height */
   --nav-height: 64px;
+  --max-width: 1400px;
 }
 
 /* fallback fonts */
@@ -87,9 +88,9 @@ body.appear {
   display: block;
 }
 
-header {
+/* header {
   height: var(--nav-height);
-}
+} */
 
 header .header,
 footer .footer {

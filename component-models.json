@@ -238,22 +238,6 @@
     "id": "linked-icon",
     "fields": [
       {
-        "component": "select",
-        "name": "icon",
-        "label": "Icon",
-        "valueType": "string",
-        "options": [
-          {
-            "name": "Logo",
-            "value": ":logo:"
-          },
-          {
-            "name": "Linked In",
-            "value": ":linked-in:"
-          }
-        ]
-      },
-      {
         "component": "reference",
         "valueType": "string",
         "name": "image",
