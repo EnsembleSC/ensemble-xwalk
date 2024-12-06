@@ -2,8 +2,7 @@
 /* eslint-disable consistent-return */
 import { createOptimizedPicture } from '../../scripts/aem.js';
 
-export default function CardsPortfolio(block) {
-  const link = block.querySelector('a');
+export default function CardsPortfolio(block, link) {
   let data = [];
 
   block.textContent = '';

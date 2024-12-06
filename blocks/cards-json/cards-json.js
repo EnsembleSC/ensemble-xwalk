@@ -2,14 +2,15 @@ import CardsPortfolio from './cards-portfolio.js';
 import CardsTeams from './cards-teams.js';
 
 export default function decorate(block) {
-  const isPortfolio = block.classList.contains('portfolio');
-  const isTeams = block.classList.contains('teams');
+  const link = block.querySelector('a');
+  const isPortfolio = link.href.includes('portfolio');
+  const isTeams = link.href.contains('teams');
 
   if (isPortfolio) {
-    CardsPortfolio(block);
+    CardsPortfolio(block, link);
   }
 
   if (isTeams) {
-    CardsTeams(block);
+    CardsTeams(block, link);
   }
 }

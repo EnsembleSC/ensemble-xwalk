@@ -1,8 +1,7 @@
 /* eslint-disable no-shadow */
 import { createOptimizedPicture } from '../../scripts/aem.js';
 
-export default function CardsTeams(block) {
-  const link = block.querySelector('a');
+export default function CardsTeams(block, link) {
   let data = [];
   let limit;
 
