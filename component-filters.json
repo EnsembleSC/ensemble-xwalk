@@ -36,7 +36,8 @@
     "id": "column",
     "components": [
       "image",
-      "button"
+      "button",
+      "text"
     ]
   }
 ]
