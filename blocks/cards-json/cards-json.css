@@ -1,50 +1,50 @@
  /* Cards - Portfolio */
-  .cards.portfolio { 
+  .cards-json.portfolio { 
 	margin-top: 4rem;
   }
   
-  .cards.portfolio .portfolio-card-container {
+  .cards-json.portfolio .portfolio-card-container {
 	display: grid;
 	grid-template-columns: repeat(2, minmax(0, 1fr));
 	gap: 16px;
   }
   
-  .cards.portfolio .portfolio-card-container.no-case-study {
+  .cards-json.portfolio .portfolio-card-container.no-case-study {
 	grid-template-columns: unset;
   }
   
-  .cards.portfolio .portfolio-card-container.no-case-study .small-card-container {
+  .cards-json.portfolio .portfolio-card-container.no-case-study .small-card-container {
 	grid-template-columns: repeat(4, 1fr);
   }
   
-  .cards.portfolio .portfolio-card-container.no-case-study .small-card {
+  .cards-json.portfolio .portfolio-card-container.no-case-study .small-card {
 	min-height: 290px;
   }
   
-  .cards.portfolio .case-study-card {
+  .cards-json.portfolio .case-study-card {
 	display: flex;
 	width: 100%;
 	height: 100%;
   }
   
-  .cards.portfolio .case-study-card .wrapper {
+  .cards-json.portfolio .case-study-card .wrapper {
 	border-radius: 5px;
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 	width: 100%;
 	height: 100%;
   }
   
-  .cards.portfolio .case-study-card a {
+  .cards-json.portfolio .case-study-card a {
 	overflow: hidden;
 	position: relative;
 	transition: all 0.3s ease-out;
   }
   
-  .cards.portfolio .case-study-card a:hover {
+  .cards-json.portfolio .case-study-card a:hover {
 	opacity: 0.9;
   }
   
-  .cards.portfolio .case-study-card .pill {
+  .cards-json.portfolio .case-study-card .pill {
 	position: absolute;
 	top: 0;
 	color: white;
@@ -54,31 +54,31 @@
 	font-size: 16px;
   }
   
-  .cards.portfolio .case-study-card .card-images {
+  .cards-json.portfolio .case-study-card .card-images {
 	position: relative;
 	height: 100%;
 	width: 100%;
   }
   
-  .cards.portfolio .case-study-card .card-images picture:first-of-type {
+  .cards-json.portfolio .case-study-card .card-images picture:first-of-type {
 	position: relative;
   }
   
-  .cards.portfolio .case-study-card .card-images picture:last-of-type {
+  .cards-json.portfolio .case-study-card .card-images picture:last-of-type {
 	position: absolute;
 	left: 0;
 	width: -webkit-fill-available;
 	height: -webkit-fill-available;
   }
   
-  .cards.portfolio .case-study-card .card-images picture img {
+  .cards-json.portfolio .case-study-card .card-images picture img {
 	width: 100%;
 	height: 100%;
 	object-fit: cover;
 	border-radius: 5px;
   }
   
-  .cards.portfolio .small-card-container {
+  .cards-json.portfolio .small-card-container {
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);
 	grid-template-rows: repeat(2, auto);
@@ -87,19 +87,19 @@
 	box-sizing: border-box;
   }
   
-  .cards.portfolio .view-more-btn {
+  .cards-json.portfolio .view-more-btn {
 	display: block;
 	margin: 2.5rem auto 0;
 	min-width: 192px;
 	position: relative;
   }
   
-  .cards.portfolio .view-more-btn.active {
+  .cards-json.portfolio .view-more-btn.active {
 	background-color: #ccc;
 	border: #fff;
   }
   
-  .cards.portfolio .view-more-btn::after {
+  .cards-json.portfolio .view-more-btn::after {
 	content: '';
 	border: solid black;
 	border-width: 0 2px 2px 0;
@@ -112,78 +112,78 @@
 	transition: transform 0.3s ease-in-out;
   }
   
-  .cards.portfolio .view-more-btn.active::after {
+  .cards-json.portfolio .view-more-btn.active::after {
 	top: 57%;
 	transform: translateY(-50%) rotate(-135deg);
   }
   
-  .cards.portfolio .remaining-cards {
+  .cards-json.portfolio .remaining-cards {
 	display: none;
 	margin-top: 1.25rem;
 	min-height: 260px;
   }
   
-  .cards.portfolio .remaining-cards .small-card {
+  .cards-json.portfolio .remaining-cards .small-card {
 	min-height: 260px;
   }
   
-  .cards.portfolio .remaining-cards .small-card-container {
+  .cards-json.portfolio .remaining-cards .small-card-container {
 	grid-template-columns: repeat(4, 1fr);
   }
   
-  .cards.portfolio .remaining-cards .small-card {
+  .cards-json.portfolio .remaining-cards .small-card {
 	min-height: 260px;
   }
   
-  .cards.portfolio .small-card {
+  .cards-json.portfolio .small-card {
 	perspective: 600px; /* animation size */
 	box-sizing: border-box;
 	height: auto;
   }
   
-  .cards.portfolio .small-card .wrapper {
+  .cards-json.portfolio .small-card .wrapper {
 	border-radius: 5px;
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 	width: 100%;
 	height: 100%;
   }
   
-  .cards.portfolio .small-card .card-images {
+  .cards-json.portfolio .small-card .card-images {
 	position: relative;
 	height: 100%;
 	width: 100%;
   }
   
-  .cards.portfolio .small-card .card-images picture:first-of-type {
+  .cards-json.portfolio .small-card .card-images picture:first-of-type {
 	position: relative;
   }
   
-  .cards.portfolio .small-card .card-images picture:last-of-type {
+  .cards-json.portfolio .small-card .card-images picture:last-of-type {
 	position: absolute;
 	left: 0;
 	width: -webkit-fill-available;
 	height: -webkit-fill-available;
   }
   
-  .cards.portfolio .small-card .card-images:hover picture:first-of-type img {
+  .cards-json.portfolio .small-card .card-images:hover picture:first-of-type img {
 	opacity: 0.9;
 	transform: scale(1.05);
 	transition: transform 0.3s ease-out;
   }
   
-  .cards.portfolio .small-card .card-images:hover {
+  .cards-json.portfolio .small-card .card-images:hover {
 	overflow: hidden;
 	border-radius: 5px;
   }
   
-  .cards.portfolio .small-card .card-images picture img {
+  .cards-json.portfolio .small-card .card-images picture img {
 	width: 100%;
 	height: 100%;
 	object-fit: cover;
 	border-radius: 5px;
   }
   
-  .cards.portfolio .small-card .card-info {
+  .cards-json.portfolio .small-card .card-info {
 	transform: rotateY(180deg);
 	padding: 1rem;
 	box-sizing: border-box;
@@ -192,24 +192,24 @@
 	justify-content: space-between;
   }
   
-  .cards.portfolio .small-card .card-info p {
+  .cards-json.portfolio .small-card .card-info p {
 	font-size: 14px;
 	margin: 0;
   }
   
-  .cards.portfolio .small-card p.mobile {
+  .cards-json.portfolio .small-card p.mobile {
 	display: none;
 	color: #000;
 	margin: auto;
 	text-align: center;
   }
   
-  .cards.portfolio .small-card p.mobile a {
+  .cards-json.portfolio .small-card p.mobile a {
 	text-decoration: underline;
 	color: inherit;
   }
   
-  .cards.portfolio .small-card .card-info .desktop-contact-us {
+  .cards-json.portfolio .small-card .card-info .desktop-contact-us {
 	text-transform: uppercase;
 	font-size: 14px;
 	font-weight: 700;
@@ -220,7 +220,7 @@
 	width: fit-content;
   }
   
-  .cards.portfolio .small-card .card-info .desktop-contact-us:hover {
+  .cards-json.portfolio .small-card .card-info .desktop-contact-us:hover {
 	text-decoration: none;
 	background-color: rgba(255, 142, 47, 1);
 	color: var(--color-white);
@@ -228,7 +228,7 @@
 	border: 1px solid transparent;
   }
   
-  .cards.portfolio .small-card .card-flip {
+  .cards-json.portfolio .small-card .card-flip {
 	position: relative;
 	width: 100%;
 	height: 100%;
@@ -238,11 +238,11 @@
 	transition: transform 1s;
   }
   
-  .cards.portfolio .small-card .card-flip.is-flipped {
+  .cards-json.portfolio .small-card .card-flip.is-flipped {
 	transform: translateX(-100%) rotateY(-180deg);
   }
   
-  .cards.portfolio .small-card .card {
+  .cards-json.portfolio .small-card .card {
 	position: absolute;
 	width: 100%;
 	height: 100%;
@@ -250,48 +250,48 @@
   }
   
   @media (min-width: 768px) and (max-width: 1300px) {
-	.cards.portfolio .small-card .card-info p.desktop {
+	.cards-json.portfolio .small-card .card-info p.desktop {
 	  font-size: 12px;
 	}
   }
   
   @media (width <= 1200px) {
-	.cards.portfolio .small-card p.mobile {
+	.cards-json.portfolio .small-card p.mobile {
 	  display: block;
 	}
   
-	.cards.portfolio .small-card p.desktop {
+	.cards-json.portfolio .small-card p.desktop {
 	  display: none;
 	}
   
-	.cards.portfolio .small-card .desktop-contact-us {
+	.cards-json.portfolio .small-card .desktop-contact-us {
 	  display: none;
 	}
   }
   
   @media (width <= 768px) {
-	.cards.portfolio .small-card .card-info {
+	.cards-json.portfolio .small-card .card-info {
 	  padding: 0.5rem;
 	  align-items: center;
 	  justify-content: center;
 	}
   
-	.cards.portfolio .case-study-card .pill {
+	.cards-json.portfolio .case-study-card .pill {
 	  padding: 8px;
 	  font-size: 14px;
 	}
   }
   
   @media (width <= 575px) {
-	.cards.portfolio .small-card .card-info p {
+	.cards-json.portfolio .small-card .card-info p {
 	  font-size: 12px;
 	}
   
-	.cards.portfolio .small-card p.mobile {
+	.cards-json.portfolio .small-card p.mobile {
 	  display: none;
 	}
   
-	.cards.portfolio .small-card .desktop-contact-us {
+	.cards-json.portfolio .small-card .desktop-contact-us {
 	  display: block;
 	  text-align: center;
 	  padding: 0.25rem !important;
@@ -300,7 +300,124 @@
   /* End of Cards - Portfolio */
     
   /* Cards - Teams */
-  .cards.teams {
+  .cards-json.teams {
 	margin-top: 3rem;
 	padding: 1rem 0;
+  }
+
+  .cards-json.teams .cards-card-body p {
+    margin: 0;
+    font-size: 18px;
+    line-height: 1.75rem;
+    font-weight: 400;
+    text-align: center;
+    color: var(--color-black);
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: -0.9px;
+}
+
+/* Boilerplate default cards styling */ 
+.cards-json > ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	display: grid;
+	grid-gap: 32px;
+	grid-template-columns: repeat(auto-fill, minmax(calc((100% - (4 * 32px)) / 5), 1fr));
+  }
+  
+  @media (max-width: 1024px) {
+	.cards-json > ul {
+	  grid-template-columns: repeat(auto-fill, minmax(calc((100% - (2 * 32px)) / 3), 1fr));
+	}
+  }
+  
+  @media (max-width: 768px) {
+	.cards-json > ul {
+	  grid-template-columns: repeat(auto-fill, minmax(calc((100% - 32px) / 2), 1fr));
+	}
+  }
+  
+  @media (max-width: 480px) {
+	.cards-json > ul {
+	  grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
+	}
+  }
+  
+  .cards-json > ul > li a:hover {
+	text-decoration: none;
+  }
+  
+  .cards-json .cards-card-body {
+	margin: 8px 16px;
+  }
+  
+  .cards-json .cards-card-image {
+	line-height: 0;
+	overflow: hidden;
+	border-radius: 5px;
+  }
+  
+  .cards-json .cards-card-body p {
+	margin: 0;
+	font-size: 18px;
+	line-height: 1.75rem;
+	font-weight: 500;
+	text-align: center;
+	color: var(--color-black);
+	text-decoration: none;
+	text-transform: uppercase;
+	letter-spacing: -0.9px;
+  }
+  
+  .cards-json > ul > li  {
+	overflow: hidden;
+  }
+  
+  .cards-json > ul > li img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	border-radius: 5px;
+	overflow: hidden;  
+  }
+  
+  .cards-json > ul > li a:hover img {
+	transform: scale(1.05);
+	transition: transform 0.3s ease-out;
+  }
+  
+  .section.cards-json-container h4 {
+	text-align: center;
+	font-size: 24px;
+	font-weight: 700;
+  }
+  
+  .section.cards-json-container .default-content-wrapper .button-container {
+	text-align: center;
+  }
+  
+  .section.cards-json-container .default-content-wrapper .button-container a {
+	text-transform: uppercase;
+	padding: 1rem 1.5rem;
+	font-size: 14px;
+	font-weight: 700;
+	border: 1px solid #000;
+	border-radius: 5px;
+	background-color: transparent;
+	color: #000;
+	margin-top: 2rem;
+	margin-bottom: 0;
+  }
+  
+  .section.cards-json-container .default-content-wrapper .button-container a[title="Join Us"]{
+	margin-top: 0;
+  }
+  
+  .section.cards-json-container .default-content-wrapper .button-container a:hover {
+	color: var(--color-white);
+	border: 1px solid transparent;
+	background-color: rgba(255, 142, 47, 1);
+	transition-duration: .3s;
   }

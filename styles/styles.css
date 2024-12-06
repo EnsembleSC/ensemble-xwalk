@@ -24,7 +24,7 @@
 
   /* fonts */
   --body-font-family: roboto, roboto-fallback, sans-serif;
-  --heading-font-family: roboto-condensed, roboto-condensed-fallback, sans-serif;
+  --heading-font-family: var(--body-font-family);
 
   /* body sizes */
   --body-font-size-m: 22px;
@@ -263,7 +263,7 @@ main .section.light,
 main .section.highlight {
   background-color: var(--light-color);
   margin: 0;
-  padding: 40px 0;
+  /* padding: 40px 0; */
 }
 
 main .section.contact {
