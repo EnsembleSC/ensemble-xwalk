@@ -29,8 +29,7 @@ export default function CardsTeams(block, link) {
 
   async function initialize() {
     const response = await fetch(link?.href);
-    // eslint-disable-next-line no-console
-    console.log('teams', response);
+
     const hasLimitParam = response?.url.includes('limit=');
 
     if (response.ok) {
