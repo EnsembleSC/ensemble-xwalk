@@ -140,7 +140,6 @@ export default async function decorate(block) {
   }
   const link = block.querySelector('a');
   const serviceWrapper = link.closest('.carousel > div');
-  console.log(serviceWrapper);
   serviceWrapper.style.display = 'none';
 
   if (isJSONCarousel) {
