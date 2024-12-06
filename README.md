@@ -1,9 +1,10 @@
-# Your Project's Title...
-Your project's description...
+# Ensemble X-Walk Demo
+Mockup of Ensemble.com landing page to showcase how efficient is to develop sites in Edge Delivery Services with X-Walk & AEM Universal Editor.
+Original URL: https://www.ensemble.com/
 
 ## Environments
-- Preview: https://main--{repo}--{owner}.aem.page/
-- Live: https://main--{repo}--{owner}.aem.live/
+Preview: https://main--ensemble-xwalk--adobedevxsc.hlx.page/
+Live: https://main--ensemble-xwalk--adobedevxsc.hlx.live/
 
 ## Installation
 
