@@ -90,6 +90,7 @@
 	color: #000;
 	margin-top: 2rem;
 	margin-bottom: 0;
+	display: block;
   }
   
   .section.cards-container .default-content-wrapper .button-container a[title="Join Us"]{
@@ -107,6 +108,17 @@
 	.section.services-section.cards-container .cards {
 		display: flex;
 		flex-direction: column;
+	  }
+
+	  .section.services-section.cards-container .default-content-wrapper .button-container {
+		text-align: center;
+		display: flex;
+		justify-content: flex-start;
+	  }
+
+	  .section.services-section .default-content-wrapper h4 {
+		text-align: left;
+		
 	  }
 	  
 	  .section.services-section.cards-container .cards .card-container {

@@ -324,8 +324,8 @@ main .section.contact {
 	box-sizing: border-box;
   }
   
-  .services-section .default-content-wrapper p {
-	font-size: 26px;
+  .services-section .default-content-wrapper h4 {
+	font-size: 26px !important;
 	font-weight: 700;
 	line-height: 1.75rem;
 	width: 90%;
@@ -348,8 +348,8 @@ main .section.contact {
   }
   
   @media (max-width: 768px) {
-	.services-section .default-content-wrapper p {
+	.services-section .default-content-wrapper h4 {
 	  width: 100%;
-	  font-size: 18px;
+	  font-size: 18px !important;
 	}
   }

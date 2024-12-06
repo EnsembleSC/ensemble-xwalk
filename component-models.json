@@ -120,27 +120,6 @@
     ]
   },
   {
-    "id": "cards",
-    "fields": [
-      {
-        "component": "select",
-        "name": "classes",
-        "label": "Block Variant",
-        "valueType": "string",
-        "options": [
-          {
-            "name": "Default",
-            "value": ""
-          },
-          {
-            "name": "Services",
-            "value": "services"
-          }
-        ]
-      }
-    ]
-  },
-  {
     "id": "card",
     "fields": [
       {
