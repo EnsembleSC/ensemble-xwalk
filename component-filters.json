@@ -17,7 +17,8 @@
 	  "cards-json",
 	  "carousel",
       "columns",
-      "fragment"
+      "fragment",
+	  "linked-icon"
     ]
   },
   {
