@@ -189,13 +189,11 @@
         "options": [
           {
             "name": "Portfolio",
-            "value": "https://main--ensemble-xwalk--adobedevxsc.aem.page/cards/portfolio.json",
-			"className": "portfolio"
+            "value": "https://main--ensemble-xwalk--adobedevxsc.aem.page/cards/portfolio.json"
           },
           {
             "name": "Teams",
-            "value": "https://main--ensemble-xwalk--adobedevxsc.aem.page/cards/teams.json",
-			"className": "teams"
+            "value": "https://main--ensemble-xwalk--adobedevxsc.aem.page/cards/teams.json"
           }
         ]
       },

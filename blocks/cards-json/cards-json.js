@@ -7,10 +7,12 @@ export default function decorate(block) {
   const isTeams = link.href.includes('teams');
 
   if (isPortfolio) {
+    block.classList.add('portfolio');
     CardsPortfolio(block, link);
   }
 
   if (isTeams) {
+    block.classList.add('teams');
     CardsTeams(block, link);
   }
 }
