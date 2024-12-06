@@ -233,23 +233,5 @@
         "valueType": "string"
       }
     ]
-  },
-  {
-    "id": "linked-icon",
-    "fields": [
-      {
-        "component": "reference",
-        "valueType": "string",
-        "name": "image",
-        "label": "Image",
-        "multi": false
-      },
-      {
-        "component": "aem-content",
-        "name": "Link",
-        "label": "link",
-        "value": ""
-      }
-    ]
   }
 ]
