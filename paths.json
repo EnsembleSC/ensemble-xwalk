@@ -1,10 +1,16 @@
 {
-  "mappings": [
-    "/content/aem-boilerplate/:/",
-    "/content/aem-boilerplate/configuration:/.helix/config.json",
-    "/content/aem-boilerplate/metadata:/metadata.json"
-  ],
-  "includes": [
-    "/content/aem-boilerplate/"
-  ]
+	"mappings": [
+	  "/content/ensemble-xwalk/:/",
+	  "/content/ensemble-xwalk/configuration:/.helix/config.json",
+	  "/content/ensemble-xwalk/metadata:/metadata.json",
+	  "/content/dam/ensemble-xwalk/customers/:/customers/",
+	  "/content/dam/ensemble-xwalk/portfolio/:/portfolio/",
+	  "/content/dam/ensemble-xwalk/teams/:/teams/"
+	],
+	"includes": [
+	  "/content/ensemble-xwalk/",
+	  "/content/dam/ensemble-xwalk/customers/",
+	  "/content/dam/ensemble-xwalk/portfolio/",
+	  "/content/dam/ensemble-xwalk/teams/"
+	]
 }
