@@ -125,7 +125,6 @@
       {
         "component": "select",
         "name": "classes",
-        "value": "",
         "label": "Block Variant",
         "valueType": "string",
         "options": [
@@ -190,14 +189,19 @@
         "options": [
           {
             "name": "Portfolio",
-            "value": "https://main--ensemble-xwalk--adobedevxsc.aem.page/cards/portfolio.json"
+            "value": "https://main--ensemble-xwalk--adobedevxsc.aem.page/cards/portfolio.json",
+			"className": "portfolio"
           },
           {
             "name": "Teams",
-            "value": "https://main--ensemble-xwalk--adobedevxsc.aem.page/cards/teams.json"
+            "value": "https://main--ensemble-xwalk--adobedevxsc.aem.page/cards/teams.json",
+			"className": "teams"
           }
         ]
-      }
+      },
+	  {
+
+	  }
     ]
   },
   {
@@ -207,14 +211,12 @@
         "component": "text",
         "valueType": "number",
         "name": "columns",
-        "value": "",
         "label": "Columns"
       },
       {
         "component": "text",
         "valueType": "number",
         "name": "rows",
-        "value": "",
         "label": "Rows"
       }
     ]
