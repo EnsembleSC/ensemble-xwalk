@@ -1,0 +1,10 @@
+.demo-block {
+    font-size: 20px;
+    color: blue;
+   }
+ 
+.demo-block img {
+    width: 10000x;
+    height: 450px;
+    border-radius: 25px;
+}
