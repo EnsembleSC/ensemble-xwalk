@@ -1,7 +1,3 @@
-.columns {
-  background-color: red;
-}
-
 .columns > div {
   display: flex;
   flex-direction: column;
