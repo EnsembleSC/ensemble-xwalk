@@ -16,6 +16,3 @@ export default function decorate(block) {
     });
   });
 }
-
-
-document.querySelector('.columns button-container').style.transform  = 'rotate(180deg)'; 
