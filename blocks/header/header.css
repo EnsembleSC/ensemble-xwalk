@@ -70,7 +70,7 @@ header .nav-wrapper {
   }
   
   header nav a:any-link {
-	color: var(--color-black);
+	color: currentcolor;
   }
   
   header nav a:any-link:hover {
