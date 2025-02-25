@@ -4,9 +4,9 @@ Mockup of Ensemble.com landing page to showcase how efficient is to develop site
 Original URL: https://www.ensemble.com/
 
 ## Environments
-Preview: https://main--ensemble-xwalk--adobedevxsc.hlx.page/
+Preview: https://main--ensemble-xwalk--ensemblesc.aem.page/
  
-Live: https://main--ensemble-xwalk--adobedevxsc.hlx.live/
+Live: https://main--ensemble-xwalk--ensemblesc.aem.live/
 
 ## Installation
 
