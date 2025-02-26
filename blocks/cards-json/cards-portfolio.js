@@ -135,6 +135,9 @@ export default function CardsPortfolio(block, link) {
             .filter(key => key.startsWith("row"))
             .map(key => {
                 const { "jcr:primaryType": _, ...rowData } = content[key];
+                if (!rowData.hasOwnProperty("caseStudy")) {
+                    rowData.caseStudy = "false";
+                }
                 return rowData;
             });
       } else {
