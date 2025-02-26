@@ -1,6 +1,7 @@
 /* eslint-disable no-plusplus */
 /* eslint-disable consistent-return */
 import { createOptimizedPicture } from '../../scripts/aem.js';
+import { transformUrl } from './utils.js';
 
 export default function CardsPortfolio(block, link) {
   let data = [];
@@ -125,7 +126,7 @@ export default function CardsPortfolio(block, link) {
   }
 
   async function initialize() {
-    const response = await fetch(link?.href);
+    const response = await fetch(transformUrl(link?.href));
 
     if (response.ok) {
       const jsonData = await response.json();
