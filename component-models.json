@@ -150,7 +150,7 @@
         "options": [
           {
             "name": "Customers",
-            "value": "https://main--ensemble-xwalk--adobedevxsc.aem.page/carousel/customers.json"
+            "value": "https://main--ensemble-xwalk--ensemblesc.aem.page/carousel/customers.json"
           }
         ]
       }
@@ -168,11 +168,11 @@
         "options": [
           {
             "name": "Portfolio",
-            "value": "https://main--ensemble-xwalk--adobedevxsc.aem.page/cards/portfolio.json"
+            "value": "https://main--ensemble-xwalk--ensemblesc.aem.page/cards/portfolio.json"
           },
           {
             "name": "Teams",
-            "value": "https://main--ensemble-xwalk--adobedevxsc.aem.page/cards/teams.json"
+            "value": "https://main--ensemble-xwalk--ensemblesc.aem.page/cards/teams.json"
           }
         ]
       }
