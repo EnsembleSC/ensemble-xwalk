@@ -3,9 +3,9 @@
     "/content/ensemble-xwalk/:/",
     "/content/ensemble-xwalk/configuration:/.helix/config.json",
     "/content/ensemble-xwalk/metadata:/metadata.json",
-    "/content/ensemble-xwalk/cards/portfolio:/cards/portfolio.json",
-    "/content/ensemble-xwalk/cards/teams:/cards/teams.json",
-    "/content/ensemble-xwalk/carousel/customers:/carousel/customers.json",
+    "/content/ensemble-xwalk/cards/portfolio:/cards/portfolio.infinity.json",
+    "/content/ensemble-xwalk/cards/teams:/cards/teams.infinity.json",
+    "/content/ensemble-xwalk/carousel/customers:/carousel/customers.infinity.json",
     "/content/dam/ensemble-xwalk/customers/:/customers/",
     "/content/dam/ensemble-xwalk/portfolio/:/portfolio/",
     "/content/dam/ensemble-xwalk/teams/:/teams/"
