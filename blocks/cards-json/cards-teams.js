@@ -1,5 +1,6 @@
 /* eslint-disable no-shadow */
 import { createOptimizedPicture } from '../../scripts/aem.js';
+import { transformUrl } from './utils.js';
 
 export default function CardsTeams(block, link) {
   let data = [];
@@ -28,7 +29,7 @@ export default function CardsTeams(block, link) {
   }
 
   async function initialize() {
-    const response = await fetch(link?.href);
+    const response = await fetch(transformUrl(link?.href));
 
     const hasLimitParam = response?.url.includes('limit=');
 
