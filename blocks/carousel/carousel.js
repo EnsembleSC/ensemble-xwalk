@@ -2,6 +2,7 @@
 /* eslint-disable no-shadow */
 /* eslint-disable no-plusplus */
 import { createOptimizedPicture } from '../../scripts/aem.js';
+import { transformUrl } from '../cards-json/utils.js';
 
 export default function decorate(block) {
   const link = block.querySelector('a');
@@ -106,7 +107,7 @@ export default function decorate(block) {
   }
 
   async function initialize() {
-    const response = await fetch(link?.href);
+    const response = await fetch(transformUrl(link?.href));
 
     if (response.ok) {
       const jsonData = await response.json();
