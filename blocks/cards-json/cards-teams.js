@@ -35,7 +35,17 @@ export default function CardsTeams(block, link) {
 
     if (response.ok) {
       const jsonData = await response.json();
-      data = jsonData.data;
+      const content = jsonData["jcr:content"];
+      if (content) {
+        data = Object.keys(content)
+            .filter(key => key.startsWith("row"))
+            .map(key => {
+                const { "jcr:primaryType": _, ...rowData } = content[key];
+                return rowData;
+            });
+      } else {
+        data = jsonData?.data;
+      }
       limit = hasLimitParam ? jsonData.limit : 5; // set default limit to 5
 
       createCards(data);
