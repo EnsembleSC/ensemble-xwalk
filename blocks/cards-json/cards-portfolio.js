@@ -126,8 +126,8 @@ export default function CardsPortfolio(block, link) {
   }
 
   async function initialize() {
-    const response = await fetch(transformUrl(link?.href));
-
+    //const response = await fetch(transformUrl(link?.href));
+    const response = await fetch("https://main--ensemble-xwalk--ensemblesc.aem.page/cards/portfolio.json");
     if (response.ok) {
       const jsonData = await response.json();
       data = jsonData?.data;
