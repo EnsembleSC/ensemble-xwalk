@@ -19,7 +19,7 @@ export default async function decorate(block) {
   // Set background image
   const footerWrapper = document.querySelector('footer');
   const firstSection = footer.querySelectorAll('.section')[0];
-  const imageSource = firstSection.querySelector('source[type="image/png"]');
+  const imageSource = firstSection.querySelector('img, source[type="image/png"]');
   const srcset = imageSource.getAttribute('srcset');
 
   footerWrapper.style.backgroundImage = `url(${srcset})`;
