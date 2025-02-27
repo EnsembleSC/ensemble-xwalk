@@ -8,7 +8,8 @@
     "/content/ensemble-xwalk/carousel/customers:/carousel/customers.json",
     "/content/dam/ensemble-xwalk/customers/:/customers/",
     "/content/dam/ensemble-xwalk/portfolio/:/portfolio/",
-    "/content/dam/ensemble-xwalk/teams/:/teams/"
+    "/content/dam/ensemble-xwalk/teams/:/teams/",
+    "/content/dam/ensemble-xwalk/icons/:/icons/"
   ],
   "includes": [
     "/content/ensemble-xwalk/",
