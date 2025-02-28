@@ -1,5 +1,5 @@
 mountpoints:
   /:
-    url: "https://author-p151553-e1560212.adobeaemcloud.com/bin/franklin.delivery/EnsembleSC/ensemble-xwalk/main"
+    url: "https://author-p151553-e1566507.adobeaemcloud.com/bin/franklin.delivery/EnsembleSC/ensemble-xwalk/main"
     type: "markup"
     suffix: ".html"
