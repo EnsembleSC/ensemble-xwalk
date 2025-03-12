@@ -1,7 +1,7 @@
 {
   "mappings": [
     "/content/ensemble-xwalk/:/",
-    "/content/ensemble-xwalk/index/aboutUs:/aboutUs",
+    "/content/ensemble-xwalk/index/aboutUs:/aboutUs/",
     "/content/ensemble-xwalk/configuration:/.helix/config.json",
     "/content/ensemble-xwalk/metadata:/metadata.json",
     "/content/ensemble-xwalk/cards/portfolio:/cards/portfolio.json",
