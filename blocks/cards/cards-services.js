@@ -17,7 +17,7 @@ export default function CardsServices(block) {
 
     if (lastParagraph.contains(link)) {
       href = link?.href;
-      lastParagraph.remove();
+      //lastParagraph.remove();
     }
 
     const wrapperLink = document.createElement('a');
